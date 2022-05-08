@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('API demo')
     .setDescription('API to exercise')
     .setVersion('1.0')
-    .addTag('mongodb')
     .build();
   
   const document = SwaggerModule.createDocument(app, config);
