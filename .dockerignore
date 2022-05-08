@@ -1,0 +1,5 @@
+.git/
+app/node_modules/
+client/node_modules/
+app/npm-debug
+docker-compose*.yml
