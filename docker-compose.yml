@@ -4,7 +4,7 @@ services:
   app:
     build: ./app
     container_name: "api-nestjs"
-    command: sh -c "npm run start"
+    command: sh -c "npm run start:dev"
     ports:
       - 3000:3000
     volumes:
