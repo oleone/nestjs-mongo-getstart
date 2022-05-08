@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  app:
+  api:
     build: ./app
     container_name: "api-nestjs"
     command: sh -c "npm run start:dev"
@@ -9,3 +9,23 @@ services:
       - 3000:3000
     volumes:
       - .:/usr/app
+    depends_on:
+      - db
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION}
+    #   DB_HOST: ${DATABASE_HOST}
+    #   DB_USER: ${DATABASE_USER}
+    #   DB_PASS: ${DATABASE_PASSWORD}
+    #   DB_NAME: ${DATABASE_NAME}
+  
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    
+networks:
+  overlay:

@@ -1,5 +1,8 @@
 .git/
+
 app/node_modules/
 client/node_modules/
+package-lock.json
+
 app/npm-debug
 docker-compose*.yml

@@ -1,4 +1,5 @@
-import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { CreateProductDto } from 'src/dto/create-product.dto';
 import { ProductsService } from './products.service';
 
 @Controller('api/v1/products')
@@ -12,8 +13,8 @@ export class ProductsController {
     }
 
     @Post()
-    createProduct() {
-        return this.service.create();
+    createProduct(@Body() product: CreateProductDto) {
+        return this.service.create(product);
     }
 
     @Put(':id')
