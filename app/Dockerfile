@@ -4,7 +4,7 @@ LABEL version="1.0" description="node image"
 
 WORKDIR /src/app
 
-COPY ./package*.json ./
+COPY ./package.json ./
 
 RUN npm install
 
