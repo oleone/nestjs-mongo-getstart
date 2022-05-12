@@ -8,7 +8,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/usr/app
+      - ./app:/usr/app
+    links:
+      - db
     depends_on:
       - db
     environment:
